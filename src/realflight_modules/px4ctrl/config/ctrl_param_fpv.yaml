@@ -1,0 +1,76 @@
+#########################################################################
+# ⭐⭐⭐  Set parameters carefully for satisfied performance!   ⭐⭐⭐ #
+#########################################################################
+
+# 机体物理参数
+mass        : 2.50 # kg 
+gra         : 9.81 
+pose_solver : 1     # 0:From ZhepeiWang (drag & less singular) 1:From ZhepeiWang, 2:From rotor-drag    
+# 控制主循环频率上限（受机载算力与通信时延影响）
+ctrl_freq_max   : 100.0
+# 是否使用机体系角速度控制（一般位置控制任务可保持 false）
+use_bodyrate_ctrl: false
+# 手动模式速度上限（单位 m/s）
+max_manual_vel: 1.0
+max_angle: 30  # Attitude angle limit in degree. A negative value means no limit.
+low_voltage: 14.8 # 4S battery
+
+# 遥控通道方向反向设置（若摇杆方向不一致，在此调整）
+rc_reverse: # *
+    roll: false
+    pitch: false
+    yaw: false
+    throttle: false
+
+# 自动起降参数
+auto_takeoff_land:
+    enable: true
+    enable_auto_arm: true
+    no_RC: false
+    takeoff_height: 0.6 # m，自动起飞目标高度
+    takeoff_land_speed: 0.3 # m/s，自动降落/起飞阶段速度
+
+thrust_model: # The model that maps thrust signal u(0~1) to real thrust force F(Unit:N): F=K1*Voltage^K2*(K3*u^2+(1-K3)*u). 
+    print_value: true # display the value of “thr_scale_compensate” or “hover_percentage” during thrust model estimating.
+    accurate_thrust_model: false  # This can always enabled if don't require accurate control performance :-)
+    # accurate thrust mapping parameters
+    K1: 0.7583 # Needs precise calibration!
+    K2: 1.6942 # Needs precise calibration!
+    K3: 0.6786 # Needs precise calibration! K3 equals THR_MDL_FAC in https://docs.px4.io/master/en/config_mc/pid_tuning_guide_multicopter.html.
+    # approximate thrust mapping parameters
+    hover_percentage: 0.62  # 悬停油门百分比（最常用、最需要实飞校准的参数） # *
+
+gain: 
+    # 串级 PID 增益（先调 Kv，再调 Kp；改动建议小步进行）
+    Kp0: 1.2
+    Kp1: 1.2
+    Kp2: 1.2
+    Kv0: 1.0
+    Kv1: 1.0
+    Kv2: 1.0
+    # ↓↓↓ No use now --
+    Kvi0: 0.0
+    Kvi1: 0.0
+    Kvi2: 0.0
+    Kvd0: 0.0
+    Kvd1: 0.0
+    Kvd2: 0.0
+    # ↓↓↓ Only used in rate control mode.
+    KAngR: 15.0
+    KAngP: 15.0
+    KAngY: 15.0
+
+# 旋翼阻力补偿参数（通常先保持 0）
+rotor_drag:  
+    x: 0.0  # The reduced acceleration on each axis caused by rotor drag. Unit:(m*s^-2)/(m*s^-1).
+    y: 0.0  # Same as above
+    z: 0.0  # Same as above
+    k_thrust_horz: 0.0 # Set to 0 recommended... --
+
+# 各输入消息超时阈值（秒）：超时会触发保护逻辑
+msg_timeout:
+    odom: 0.5
+    rc:   0.5
+    cmd:  0.5
+    imu:  0.5
+    bat:  0.5

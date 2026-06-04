@@ -1,0 +1,27 @@
+1.启动传感器与定位
+sh start_sensor.sh
+sh start_mapping.sh
+rostopic echo /Odom_high_freq
+
+2.启动Ego-Planner与Rviz
+sh start_planner.sh
+sh start_rviz.sh
+
+3.启动PX4_ctrl后确认摇杆正确，自动起飞
+sh start_run_ctrl.sh
+
+roslaunch orbbec_camera gemini.launch		#启动相机
+rosrun ssr_pkg shibie.py 				#启动识别代码
+
+sh start_takeoff.sh
+按下G键加鼠标左键点选目标点使无人机飞行。
+
+python3 ~/REAL_DRONE_400-main/src/planner/plan_manage/scripts/waypoint_sequence_sender.py 
+
+4.任务完成后使用自动降落
+sh start_land.sh
+
+
+rosparam set /drone_0_ego_planner_node/manager/max_vel 1.0
+rosparam set /drone_0_ego_planner_node/manager/max_acc 1.0
+rosparam set /drone_0_ego_planner_node/manager/max_jerk 2.0

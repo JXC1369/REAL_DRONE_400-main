@@ -1,0 +1,84 @@
+# ROS Build and Devel directories
+build/
+build-/
+devel/
+devel-/
+install/
+.catkin_tools/
+.cmake.rc
+
+# Generated message files
+*_msgs/
+*.msg.py
+
+# Python compiled files
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+*.whl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.o
+*.a
+*.so
+*.elf
+
+# CMake
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+*.cmake
+
+# Test results
+test_results/
+CTest*.txt
+
+# Log files
+*.log
+*.ulg
+*.bag
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Ninja build files
+build.ninja
+rules.ninja
+.ninja_deps
+.ninja_log
+
+# other build artifacts
+bin/
+lib/
+atomic_configure/
+gtest/
+Testing/
+
+# Large object files
+*.o.obj
+*.a.obj
+
+# Compiled object files (can be large)
+*.cpp.o
+*.cc.o
+*.c.o
+
+# Release folder with large files
+release/STEP/*.STEP
+release/*.STEP
