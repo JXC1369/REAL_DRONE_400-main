@@ -1,9 +1,14 @@
 一、安装ROS
-wget http://fishros.com/install -O fishros && . fishros
-安装ros noetic
+
+
+wget http://fishros.com/install -O fishros && . fishros，选ros noetic
+
+
 
 
 二、安装mavros
+
+
 sudo apt install ros-$ROS_DISTRO-mavros ros-$ROS_DISTRO-mavros-extras
 
 安装 GeographicLib datasets:
@@ -25,6 +30,8 @@ cd geographiclib_datasets_tools/
 chmod a+x ./install_geographiclib_datasets.sh
 
 sudo ./install_geographiclib_datasets.sh
+
+
 
 
 三、编译会遇到的问题
