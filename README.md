@@ -87,20 +87,35 @@ source ~/livox_ws/devel/setup.bash
 
 这个是没有定位到包
 修改fastlio/CMakelist下的内容，找到find_package，在末尾加入genmsg
+
 find_package(catkin REQUIRED COMPONENTS
+
   geometry_msgs
+  
   nav_msgs
+  
   sensor_msgs
+  
   roscpp
+  
   rospy
+  
   std_msgs
+  
   pcl_ros
+  
   tf
+  
   livox_ros_driver2
+  
   message_generation
+  
   eigen_conversions
+  
   genmsg
+  
 )
+
 同时在结尾加入add_dependencies(fastlio_mapping fast_lio_generate_messages_cpp)
 
 
