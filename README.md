@@ -2,11 +2,15 @@
 
 
 一、没有mid360的驱动，需要我们自己安装
+
 https://gitcode.com/gh_mirrors/li/livox_ros_driver2?utm_source=csdn_github_accelerator&isLogin=1&from_link=169f004da7ba7757dc3b16e41aa88eee
 这是国内gitcode的livox_ros_driver2分支
+
 https://gitcode.com/gh_mirrors/li/Livox-SDK2?utm_source=csdn_github_accelerator&isLogin=1&from_link=e83667b0c2e34ce12924eb6fcbf2a5fc
 这是国内gitcode的livox_sdk2分支
+
 根据readme来进行安装
+
 可以自己建一个工作空间来存放雷达驱动
 
 
