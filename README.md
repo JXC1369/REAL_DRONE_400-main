@@ -1,4 +1,26 @@
-编译会遇到的问题
+一、安装ROS
+wget http://fishros.com/install -O fishros && . fishros
+安装ros noetic
+
+
+二、安装mavros
+sudo apt install ros-$ROS_DISTRO-mavros ros-$ROS_DISTRO-mavros-extras
+# 安装 GeographicLib datasets:
+wget https://gitee.com/tyx6/mytools/raw/main/mavros/install_geographiclib_datasets.sh
+chmod a+x ./install_geographiclib_datasets.sh
+sudo ./install_geographiclib_datasets.sh  #这步可能需要装一段时间
+
+<img width="436" height="54" alt="image" src="https://github.com/user-attachments/assets/459ccc7b-1d4d-4a3a-8d6e-116588ef3c02" />
+
+如果十分钟后还没安装好，可以执行下面的步骤
+
+git clone https://gitee.com/tyx6/geographiclib_datasets_tools.git
+cd geographiclib_datasets_tools/
+chmod a+x ./install_geographiclib_datasets.sh
+sudo ./install_geographiclib_datasets.sh
+
+
+三、编译会遇到的问题
 
 
 1、没有mid360的驱动，需要我们自己安装
