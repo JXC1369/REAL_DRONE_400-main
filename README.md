@@ -6,7 +6,7 @@ wget http://fishros.com/install -O fishros && . fishros
 二、安装mavros
 sudo apt install ros-$ROS_DISTRO-mavros ros-$ROS_DISTRO-mavros-extras
 
-# 安装 GeographicLib datasets:
+安装 GeographicLib datasets:
 wget https://gitee.com/tyx6/mytools/raw/main/mavros/install_geographiclib_datasets.sh
 
 chmod a+x ./install_geographiclib_datasets.sh
