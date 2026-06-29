@@ -1,7 +1,7 @@
 编译会遇到的问题
 
 
-一、没有mid360的驱动，需要我们自己安装
+1、没有mid360的驱动，需要我们自己安装
 
 https://gitcode.com/gh_mirrors/li/livox_ros_driver2?utm_source=csdn_github_accelerator&isLogin=1&from_link=169f004da7ba7757dc3b16e41aa88eee
 这是国内gitcode的livox_ros_driver2分支
@@ -14,7 +14,7 @@ https://gitcode.com/gh_mirrors/li/Livox-SDK2?utm_source=csdn_github_accelerator&
 可以自己建一个工作空间来存放雷达驱动
 
 
-二、缺少quadrotor_msgs
+2、缺少quadrotor_msgs
 
 <img width="476" height="361" alt="image" src="https://github.com/user-attachments/assets/9207ab64-005c-45cd-83ac-b8adc04095ee" />
 
@@ -23,7 +23,7 @@ https://gitcode.com/gh_mirrors/li/Livox-SDK2?utm_source=csdn_github_accelerator&
 
 
 
-三、
+3、
 
 <img width="1012" height="215" alt="image" src="https://github.com/user-attachments/assets/a33e781a-06b7-47b0-8761-e800ab8485a6" />
 
@@ -33,7 +33,7 @@ source ~/livox_ws/devel/setup.bash
 
 
 
-四、
+4、
 
 <img width="953" height="218" alt="image" src="https://github.com/user-attachments/assets/1f024064-820b-437c-a6fb-ee5d262a4184" />
 
@@ -44,7 +44,7 @@ source ~/livox_ws/devel/setup.bash
 <img width="362" height="124" alt="image" src="https://github.com/user-attachments/assets/6f96f08b-bc0a-43d2-bf78-d70890bbad06" />
 
 
-五、
+5、
 
 <img width="578" height="83" alt="image" src="https://github.com/user-attachments/assets/dd6d9d1a-2e82-44f3-a38c-d498133939b4" />
 
@@ -69,7 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 
 
-六、
+6、
 
 <img width="578" height="64" alt="image" src="https://github.com/user-attachments/assets/bfffa286-6f49-4d69-baca-ae8dae0ba030" />
 
